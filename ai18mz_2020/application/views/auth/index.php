@@ -22,8 +22,8 @@
     <p><?php echo lang('index_subheading');?></p>
   
       <a href="<?php echo base_url() ?>auth/logout">Logout  </a>
-      <a href="<?php echo base_url() ?>musics/index">|  Musics</a>     
-   
+      <a href="<?php echo base_url() ?>musics/index">|  Musics List</a>     
+      <a href="<?php echo base_url() ?>films/index">|  Films List</a>  
 </div>   
 
 <div>

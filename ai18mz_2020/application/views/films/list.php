@@ -19,22 +19,23 @@
     <h1>Musics</h1>      
 	
 	 <a href="<?php echo base_url() ?>auth/logout">Logout  </a>
-     <a href="<?php echo base_url() ?>auth">|  User list</a>    
-	 <a href="<?php echo base_url() ?>films/index">|  Films List</a>
+     <a href="<?php echo base_url() ?>auth">|  User list</a>
+	 <a href="<?php echo base_url() ?>musics/index">|  Musics List</a>  
 </div>
 </div>
 <br/><br/>
- <a href="<?php echo base_url() ?>musics/insert" class="btn btn-dark ">New Music</a>
+ <a href="<?php echo base_url() ?>films/insert" class="btn btn-dark ">New Film</a>
  <br/><br/>
-<?php if($musics == NULL || empty($musics)): ?>
-    <p>Nincs rögzítve egyetlen alkalmazott sem!</p>
+
+<?php if($films == NULL || empty($films)): ?>
+    <p>Nincs rögzítve egyetlen film sem!</p>
 <?php else: ?>
     <table>
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Performer</th>
-                <th>Title</th>
+                <th>Address</th>
+                <th>Type</th>
                 <th>Time</th>
 				
                 <th>Operations</th>
@@ -42,17 +43,17 @@
         </thead>
         
         <tbody>
-            <?php foreach($musics as &$mus): ?>
+            <?php foreach($films as &$film): ?>
             <tr>
-                <td><?=$mus->id?></td>
-                <td><?=$mus->performer?></td>
-                <td><?=$mus->title?></td>
-                <td><?=$mus->time?></td>
+                <td><?=$film->id?></td>
+                <td><?=$film->address?></td>
+                <td><?=$film->type?></td>
+                <td><?=$film->time?></td>
 				
                 <td>
-                    <?php echo anchor(base_url('musics/edit/'.$mus->id),'Edit');?>
-                    <?php echo anchor(base_url('musics/delete/'.$mus->id),'Delete');?>
-                    <?php echo anchor(base_url('musics/cover/'.$mus->id),'Profil');?>
+                    <?php echo anchor(base_url('films/edit/'.$film->id),'Edit');?>
+                    <?php echo anchor(base_url('films/delete/'.$film->id),'Delete');?>
+                   
                 </td>
             </tr>
             <?php endforeach; ?>

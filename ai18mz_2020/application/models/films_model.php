@@ -7,11 +7,11 @@
  */
 
 /**
- * 
+ *
  *
  * @author szabb
  */
-class musics_model extends CI_Model{
+class films_model extends CI_Model{
     
 	public function __construct(){
         parent::__construct();
@@ -22,8 +22,8 @@ class musics_model extends CI_Model{
 
     public function get_list(){
         $this->db->select('*');
-        $this->db->from('musics'); 
-        $this->db->order_by('performer','ASC'); 
+        $this->db->from('films'); 
+        $this->db->order_by('address','ASC'); 
         
         $query = $this->db->get(); 
         $result = $query->result(); 
@@ -31,21 +31,21 @@ class musics_model extends CI_Model{
         return $result;
     }
     
-    public function update($id, $performer, $title, $time){
+    public function update($id, $address, $type, $time){
         $record = [
-            'performer'  =>  $performer, 
-            'title'   =>  $title,
+            'address'  =>  $address, 
+            'type'   =>  $type,
             'time'   =>  $time
 
         ];
         $this->db->where('id',$id);
-        return $this->db->update('musics',$record);
+        return $this->db->update('films',$record);
     }
     
     public function select_by_id($id){
 
         $this->db->select("*");
-        $this->db->from('musics');
+        $this->db->from('films');
         $this->db->where('id',$id); 
         
         return $this->db->get() 
@@ -54,20 +54,18 @@ class musics_model extends CI_Model{
     
     public function delete($id){
         $this->db->where('id',$id);
-        return $this->db->delete('musics');
+        return $this->db->delete('films');
     }
-	public function insert($performer, $title, $time, $photo_path){
+	public function insert($address, $type, $time){
         
         $record = [ 
-            'performer'   =>  $performer,
-            'title'   =>  $title,
-			'time' => $time,
-			'photo_path' => $photo_path
+            'address'  =>  $address, 
+            'type'   =>  $type,
+            'time'   =>  $time
         ];
         
-        return $this->db->insert('musics',$record);
-        
-        return $this->db->insert_id();
+        return $this->db->insert('films',$record);
+
     }
 	
 
