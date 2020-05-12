@@ -1,6 +1,6 @@
 <?php
 
-class films extends CI_Controller{
+class Films extends CI_Controller{
    public function __construct(){
         parent::__construct();
         
@@ -26,13 +26,13 @@ class films extends CI_Controller{
            
             
             $this->form_validation->set_rules('address','address','required');
-            $this->form_validation->set_rules('type','type','required');
+            $this->form_validation->set_rules('type_of','type_of','required');
             $this->form_validation->set_rules('time','time','required');
 
             if($this->form_validation->run() == TRUE){
                
                 $this->films_model->insert($this->input->post('address'),
-                                           $this->input->post('type'),
+                                           $this->input->post('type_of'),
 										   $this->input->post('time'));            
                 $this->load->helper('url');              
                 redirect(base_url('films/index'));
@@ -56,15 +56,15 @@ class films extends CI_Controller{
         $this->load->library('form_validation');
        
         $this->form_validation->set_rules('address','address','required');
-        $this->form_validation->set_rules('type','type','required');
+        $this->form_validation->set_rules('type_of','type_of','required');
         $this->form_validation->set_rules('time','time','required');
          
         
         if($this->form_validation->run() == TRUE){
           
-            $this->films_model->insert($this->input->post('id'),
+            $this->films_model->update($id,
                                                $this->input->post('address'),
-                                               $this->input->post('type'),
+                                               $this->input->post('type_of'),
 											   $this->input->post('time'));
             $this->load->helper('url');
             redirect(base_url('films'));

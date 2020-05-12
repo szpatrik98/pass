@@ -31,10 +31,10 @@ class films_model extends CI_Model{
         return $result;
     }
     
-    public function update($id, $address, $type, $time){
+    public function update($id, $address, $type_of, $time){
         $record = [
             'address'  =>  $address, 
-            'type'   =>  $type,
+            'type_of'   =>  $type_of,
             'time'   =>  $time
 
         ];
@@ -56,11 +56,11 @@ class films_model extends CI_Model{
         $this->db->where('id',$id);
         return $this->db->delete('films');
     }
-	public function insert($address, $type, $time){
+	public function insert($address, $type_of, $time){
         
         $record = [ 
             'address'  =>  $address, 
-            'type'   =>  $type,
+            'type_of'   =>  $type_of,
             'time'   =>  $time
         ];
         

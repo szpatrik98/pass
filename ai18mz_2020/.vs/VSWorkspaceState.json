@@ -11,6 +11,6 @@
     "\\application\\views\\music",
     "\\uploads"
   ],
-  "SelectedNode": "\\application\\views\\films\\insert.php",
+  "SelectedNode": "\\application\\controllers\\films.php",
   "PreviewInSolutionExplorer": false
 }

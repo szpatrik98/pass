@@ -47,7 +47,7 @@
             <tr>
                 <td><?=$film->id?></td>
                 <td><?=$film->address?></td>
-                <td><?=$film->type?></td>
+                <td><?=$film->type_of?></td>
                 <td><?=$film->time?></td>
 				
                 <td>
