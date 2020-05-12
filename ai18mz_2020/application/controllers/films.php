@@ -19,8 +19,8 @@ class Films extends CI_Controller{
        $this->load->view('films/list', $view_params);
     }
     public function insert(){
-        
-        if($this->input->post('submit')){
+        //$this->input->post('submit')
+        if(!empty($_POST)){
            
             $this->load->library('form_validation');
            
@@ -30,7 +30,7 @@ class Films extends CI_Controller{
             $this->form_validation->set_rules('time','time','required');
 
             if($this->form_validation->run() == TRUE){
-               
+                
                 $this->films_model->insert($this->input->post('address'),
                                            $this->input->post('type_of'),
 										   $this->input->post('time'));            

@@ -22,7 +22,7 @@ class musics extends CI_Controller{
     
    public function insert(){
 
-		 if($this->input->post('submit')){
+		 if(!empty($_POST)){
             
             $this->load->library('form_validation');
 
@@ -35,36 +35,37 @@ class musics extends CI_Controller{
                     
                     $upload_config['allowed_types'] = 'jpg|jpeg|png';            
                     $upload_config['max_size'] = 23000;  
-                    $upload_config['min_width'] = 250;
-					$upload_config['max_width'] = 1980;
-                    $upload_config['min_height'] = 250; 
-					$upload_config['max_height'] = 1980;
+
                     $upload_config['file_name'] = $this->input->post('title') . '_001';
                     $upload_config['upload_path'] = './uploads/';
                     $upload_config['file_ext_tolower'] = TRUE;
                     $upload_config['overwrite'] = FALSE;
-                    $this->load->library('upload'); 
+                   
+				    $this->load->library('upload'); 
                     $this->upload->initialize($upload_config);
                 
                if($this->upload->do_upload('photo')){
-                       
-					   $photo_data = $this->upload->data();
+                       $photo_data = $this->upload->data();
 
-					   $this->musics_model->insert($this->
+					   $this->musics_model->insert(
                                                $this->input->post('performer'),
 											   $this->input->post('title'),
                                                $this->input->post('time'),
                                                $photo_data['file_name']);
 					   $this->load->helper('url');
-                       redirect(base_url('music/index'));  
+                       redirect(base_url('musics/index')); 	
+
+
+					  
+					    
                 }else{
 					   $view_params = [    
                           'errors' => $this->upload->display_errors()
                               ];
                        $this->load->helper('form');
-                       return $this->load->view('music/insert',$view_params);					 
-                    } 
-	            }
+                       return $this->load->view('music/insert',$view_params);	 
+                } 
+	        }
          }else{
 		 $this->load->helper('form');
          $this->load->view('music/insert');

@@ -56,8 +56,10 @@ class films_model extends CI_Model{
         $this->db->where('id',$id);
         return $this->db->delete('films');
     }
+
 	public function insert($address, $type_of, $time){
         
+		var_dump($record);
         $record = [ 
             'address'  =>  $address, 
             'type_of'   =>  $type_of,

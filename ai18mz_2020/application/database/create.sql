@@ -152,7 +152,29 @@ INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
 --
 -- Megkötések a kiírt táblákhoz
 --
+-- --------------------------------------------------------
 
+--
+-- Tábla szerkezet ehhez a táblához `films`
+--
+
+DROP TABLE IF EXISTS `films`;
+CREATE TABLE IF NOT EXISTS `films` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `address` varchar(250) CHARACTER SET utf8 COLLATE utf8_hungarian_ci NOT NULL,
+  `type_of` varchar(250) CHARACTER SET utf8 COLLATE utf8_hungarian_ci NOT NULL,
+  `time` int(60) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+
+--
+-- A tábla adatainak kiíratása `films`
+--
+
+INSERT INTO `films` (`id`, `address`, `type_of`, `time`) VALUES
+(1, 'Az', 'horror', 100),
+(2, 'XXX', 'akció', 180);
+COMMIT;
 --
 -- Megkötések a táblához `users_groups`
 --

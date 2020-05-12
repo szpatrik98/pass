@@ -3,14 +3,11 @@
     "",
     "\\application",
     "\\application\\controllers",
-    "\\application\\core",
-    "\\application\\database",
     "\\application\\models",
     "\\application\\views",
     "\\application\\views\\films",
-    "\\application\\views\\music",
-    "\\uploads"
+    "\\application\\views\\music"
   ],
-  "SelectedNode": "\\application\\controllers\\films.php",
+  "SelectedNode": "\\application\\controllers\\musics.php",
   "PreviewInSolutionExplorer": false
 }
