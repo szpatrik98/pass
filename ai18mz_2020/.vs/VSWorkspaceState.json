@@ -4,10 +4,12 @@
     "\\application",
     "\\application\\controllers",
     "\\application\\models",
+    "\\application\\third_party",
     "\\application\\views",
+    "\\application\\views\\auth",
     "\\application\\views\\films",
     "\\application\\views\\music"
   ],
-  "SelectedNode": "\\application\\controllers\\musics.php",
+  "SelectedNode": "\\application\\controllers\\Auth.php",
   "PreviewInSolutionExplorer": false
 }

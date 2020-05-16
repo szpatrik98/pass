@@ -18,13 +18,20 @@
 <div class="p-3 mb-2 bg-secondary text-white center">  
     <h1>Musics</h1>      
 	
-	 <a href="<?php echo base_url() ?>auth/logout">Logout  </a>
-     <a href="<?php echo base_url() ?>auth">|  User list</a>
-	 <a href="<?php echo base_url() ?>musics/index">|  Musics List</a>  
+	 <a href="<?php echo base_url() ?>auth/logout" class="btn btn-danger ">Logout  </a>
+     <a href="<?php echo base_url() ?>auth" class="btn btn-danger ">User list</a>
+	 <a href="<?php echo base_url() ?>musics/index" class="btn btn-danger ">Musics List</a>  
 </div>
 </div>
 <br/><br/>
  <a href="<?php echo base_url() ?>films/insert" class="btn btn-dark ">New Film</a>
+ <a href="<?php echo base_url() ?>films/exports_data" class="btn btn-dark ">Export Films to CSV</a>
+ 
+ 
+
+
+
+
  <br/><br/>
 
 <?php if($films == NULL || empty($films)): ?>

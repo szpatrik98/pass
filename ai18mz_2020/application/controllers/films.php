@@ -99,4 +99,31 @@ class Films extends CI_Controller{
         $this->load->helper('url');
         redirect(base_url('films/index'));
     }
+
+	 public function exports_data(){
+			
+			$filmsData = $this->films_model->ViewDataa("eml_collection", "address", "type_of","time");
+            
+           
+			$filename = 'films_'.date('Ymd').'.csv'; 
+		    header("Content-Description: File Transfer"); 
+			header("Content-Disposition: attachment; filename=$filename"); 
+			header("Content-type: application/csv");
+            
+            header("Pragma: no-cache");
+            header("Expires: 0");
+			$header = array("ID","Address","Type_of","Time"); 
+            $handle = fopen('php://output', 'w');
+
+		
+			fputcsv($handle, $header);
+            foreach ($filmsData as $filmsData) {
+                fputcsv($handle, $filmsData);
+				
+            }
+                fclose($handle);
+				 
+            exit;
+        }
+	
 }

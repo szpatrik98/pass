@@ -30,6 +30,11 @@ class films_model extends CI_Model{
     
         return $result;
     }
+	  public function ViewDataa() {
+		   $this->db->select('*');
+		   $this->db->from('films');
+		   return $this->db->get()->result_array();
+	  } 
     
     public function update($id, $address, $type_of, $time){
         $record = [

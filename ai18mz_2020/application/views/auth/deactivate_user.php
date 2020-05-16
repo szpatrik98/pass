@@ -18,9 +18,9 @@
 <div class="p-3 mb-2 bg-secondary text-white center">
 <h1><?php echo lang('deactivate_heading');?></h1>
    <div class="topnav">
-      <a href="<?php echo base_url() ?>auth/logout">Logout  |</a>
-      <a href="<?php echo base_url() ?>auth/login">  login  |</a>
-      <a href="<?php echo base_url() ?>auth">  Users List</a>
+       <a href="<?php echo base_url() ?>auth/logout" class="btn btn-danger ">Logout  </a>
+      <a href="<?php echo base_url() ?>musics/index" class="btn btn-danger ">Musics List</a>     
+      <a href="<?php echo base_url() ?>films/index"class="btn btn-danger ">Films List</a>
     </div>
 
 </div>

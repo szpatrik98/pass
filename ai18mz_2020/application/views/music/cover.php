@@ -41,6 +41,7 @@
     </tr>
 </table>
 
-<?=anchor(base_url('musics/index'),'Back.');?>
+<a href="<?php echo base_url() ?>musics/index" class="btn btn-dark ">Back</a> 
+
 
 </div>

@@ -10,7 +10,7 @@ class Auth extends CI_Controller {
 		$this->load->helper(array('url','language'));
 
 		$this->form_validation->set_error_delimiters($this->config->item('error_start_delimiter', 'ion_auth'), $this->config->item('error_end_delimiter', 'ion_auth'));
-
+		$this->load->model('musics_model');
 		$this->lang->load('auth');
 	}
 
@@ -25,8 +25,16 @@ class Auth extends CI_Controller {
 		}
 		elseif (!$this->ion_auth->is_admin()) // remove this elseif if you want to enable this for non-admins
 		{
+			   $records = $this->musics_model->get_list(); 
+
+			   $view_params = [
+				   'musics'  =>  $records
+			   ];
+			   $this->load->helper('url'); 
+
+			   $this->load->view('music/list', $view_params);
 			// redirect them to the home page because they must be an administrator to view this
-			return show_error('You must be an administrator to view this page.');
+			//return show_error('You must be an administrator to view this page.');
 		}
 		else
 		{
@@ -64,7 +72,7 @@ class Auth extends CI_Controller {
 				//if the login is successful
 				//redirect them back to the home page
 				$this->session->set_flashdata('message', $this->ion_auth->messages());
-				redirect('/auth', 'refresh');
+				redirect('/auth/index', 'refresh');
 			}
 			else
 			{

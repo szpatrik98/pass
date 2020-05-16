@@ -18,9 +18,9 @@
 <div class="p-3 mb-2 bg-secondary text-white center">  
     <h1>Musics</h1>      
 	
-	 <a href="<?php echo base_url() ?>auth/logout">Logout  </a>
-     <a href="<?php echo base_url() ?>auth">|  User list</a>    
-	 <a href="<?php echo base_url() ?>films/index">|  Films List</a>
+	 <a href="<?php echo base_url() ?>auth/logout" class="btn btn-danger ">Logout  </a>
+     <a href="<?php echo base_url() ?>auth" class="btn btn-danger ">User list</a>    
+	 <a href="<?php echo base_url() ?>films/index" class="btn btn-danger ">Films List</a>
 </div>
 </div>
 <br/><br/>
